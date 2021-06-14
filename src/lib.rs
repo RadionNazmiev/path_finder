@@ -1,23 +1,35 @@
+
 fn path_finder(maze: &str) -> bool {
+
     let mut lab = maze
         .split("\n")
         .map(|line| line.chars().collect())
         .collect::<Vec<Vec<_>>>();
-    let is_walkable_to= |row: i32, col: i32| -> bool {
-        if let Some(x) = lab.get(row as usize).unwrap().get(col as usize) {
-            *x != 'W' && *x != 'X'
-        } else {
-            false
-        }
-    };
-    fn look_for_paths(v: &mut Vec<Vec<char>>, r: i32, c:i32) -> bool {
-        v[r as usize][c as usize] = 'X';
-        [(0,1),(1,0),(0,-1)(-1,0)].iter()
-            .filter(|&(x,y)| is_walkable_to(c+y,r+x))
-            .for_each(|(x,y)| look_for_paths(v))
-        todo!()
+
+    static DIR: [(i32,i32);4] = [(0,1),(1,0),(0,-1),(-1,0)];
+
+    fn get_valid_siblings (row: i32, col: i32, lab: &Vec<Vec<char>>) -> Vec<(i32,i32)> {
+        DIR.iter()
+            .filter(|&&(r,c)| r+row >= 0 && c+col >= 0 && r+row < lab.len() as i32 && c+col < lab.len() as i32)
+            .filter(|&&(r,c)| Some(&'.') == lab.get((row + r) as usize).unwrap().get((col + c) as usize))
+            .map(|&(r,c)|(row+r,col+c))
+            .collect()
     }
 
+    fn walk(row: i32, col:i32, v: &mut Vec<Vec<char>>) -> bool {
+        if row as usize == v.len()-1 && col as usize == v[0].len()-1 {
+            true
+        } else {
+            v[row as usize][col as usize] = 'X';
+            let t = get_valid_siblings(row,col,v);
+            if t.len() != 0 {
+                t.iter().any(|(r,c)| walk(*r,*c,v))
+            } else {
+                false
+            }
+        }
+    }
+    walk(0,0,&mut lab)
 }
 
 #[cfg(test)]
