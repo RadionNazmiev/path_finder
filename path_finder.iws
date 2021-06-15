@@ -4,7 +4,7 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce78c6e2-d672-40af-9008-4d5b8b4f307d" name="Default Changelist" comment="init commit">
+    <list default="true" id="ce78c6e2-d672-40af-9008-4d5b8b4f307d" name="Default Changelist" comment="second commit">
       <change beforePath="$PROJECT_DIR$/path_finder.iws" beforeDir="false" afterPath="$PROJECT_DIR$/path_finder.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
     </list>
@@ -30,7 +30,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
   </component>
-  <component name="RunManager" selected="Cargo.Test">
+  <component name="RunManager" selected="Cargo.Test tests::basic">
     <configuration name="Test tests::basic" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="command" value="test --package path_finder --lib tests::basic -- --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$" />
@@ -69,6 +69,7 @@
   </component>
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+    <option name="version" value="2" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -79,6 +80,14 @@
       <option name="presentableId" value="Default" />
       <updated>1623634302770</updated>
     </task>
+    <task id="LOCAL-00001" summary="second commit">
+      <created>1623703962052</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1623703962052</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -91,9 +100,11 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
+    <MESSAGE value="second commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="second commit" />
   </component>
 </project>
